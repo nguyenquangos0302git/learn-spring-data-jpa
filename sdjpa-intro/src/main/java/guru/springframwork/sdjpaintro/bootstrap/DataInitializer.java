@@ -18,8 +18,10 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Book bookDDD = new Book("Domain Driven Design", "1234", "RandomHouse");
-        Book bookSIA = new Book("Spring In Action", "1234", "Oriely");
+        bookRepository.deleteAll();
+
+        Book bookDDD = new Book("Domain Driven Design", "1234", "RandomHouse", null);
+        Book bookSIA = new Book("Spring In Action", "1234", "Oriely", null);
         bookRepository.save(bookDDD);
         bookRepository.save(bookSIA);
 
